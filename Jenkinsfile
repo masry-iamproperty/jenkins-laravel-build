@@ -6,10 +6,14 @@ pipeline {
     }
     stages {
         stage("Build"){
-            sh 'composer install -vvv'
+            steps {
+                sh 'composer install -vvv'
+            }
         }
         stage("Test"){
-            sh './vendor/bin/phpunit'
+            steps {
+                sh './vendor/bin/phpunit'
+            }
         }
     }
 }
