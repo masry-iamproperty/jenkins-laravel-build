@@ -1,13 +1,12 @@
 pipeline {
     agent {
         docker {
-             image 'php:8.1.5RC1-fpm-buster'
+             image 'composer:latest'
         }
     }
     stages {
         stage("Build"){
             steps {
-                sh 'dnf install git-all && apt install -y git-all'
                 sh 'php composer.phar install -vvv'
             }
         }
