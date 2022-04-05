@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                sh 'composer install -vvv'
+                sh 'php composer.phar install -vvv'
             }
         }
         stage("Test"){
