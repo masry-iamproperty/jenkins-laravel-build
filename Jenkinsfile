@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
              image 'composer:latest'
-             image 'selenium/standalone-chrome'
         }
     }
     stages {
@@ -17,6 +16,11 @@ pipeline {
             }
         }
         stage("Acceptance Test"){
+            agent {
+                docker {
+                     image 'selenium/standalone-chrome'
+                }
+            }
             steps {
                 // what to type here ... ?
                 echo "Figuring it out"
