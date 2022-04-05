@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-             image 'nginx-php-fpm:php81'
+             image 'php:fpm-alpine3.14'
         }
     }
     stages {
