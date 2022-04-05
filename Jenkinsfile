@@ -19,6 +19,7 @@ pipeline {
         stage("Acceptance Test"){
             steps {
                 // what to type here ... ?
+                echo "Figuring it out"
             }
         }
     }
