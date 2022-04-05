@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                sh 'apt-get update && apt-get install -y git'
+                sh 'dnf install git-all && apt install -y git-all'
                 sh 'php composer.phar install -vvv'
             }
         }
