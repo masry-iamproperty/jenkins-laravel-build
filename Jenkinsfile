@@ -17,7 +17,6 @@ pipeline {
                         dockerfile {
                             filename 'Dockerfile'
                             dir '.docker'
-                            label 'docker compose cluster'
                         }
                     }
                     steps {
