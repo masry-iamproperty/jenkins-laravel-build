@@ -2,7 +2,7 @@
 
 echo "Building application"
 
-composer install -no-dev -vvv
+composer install --no-dev -vvv
 
 if [ ! -f .env ]; then
     echo ".env file not found ... generating .env file"
