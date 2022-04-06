@@ -25,7 +25,7 @@ pipeline {
                 }
                 stage("Laravel Tests"){
                     steps {
-                        sh './vendor/bin/phpunit'
+                        sh 'php artisan test'
                     }
                 }
             }
