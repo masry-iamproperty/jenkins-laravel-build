@@ -15,7 +15,6 @@ pipeline {
                 stage("Acceptance"){
                     agent {
                         dockerfile {
-                            filename 'Dockerfile'
                             dir '.docker'
                         }
                     }
