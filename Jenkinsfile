@@ -11,13 +11,17 @@ pipeline {
             }
         }
         stage("Test"){
-            steps {
-                sh './vendor/bin/phpunit'
-            }
-        }
-        stage("Acceptance Test"){
-            steps {
-                echo "Figuring it out"
+            parallel {
+                stage("Acceptance"){
+                    agent {
+                        docker { image: 'selenium/standalone-chrome:latest'}
+                    }
+                }
+                stage("Laravel Tests"){
+                    steps {
+                        sh 'vendor/bin/phpunit'
+                    }
+                }
             }
         }
     }
