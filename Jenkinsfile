@@ -14,7 +14,11 @@ pipeline {
             parallel {
                 stage("Acceptance"){
                     agent {
-                        docker { image 'selenium/standalone-chrome:latest'}
+                        dockerfile {
+                            filename 'Dockerfile'
+                            dir '.docker'
+                            label 'docker compose cluster'
+                        }
                     }
                     steps {
                         echo "hello from selenium"
