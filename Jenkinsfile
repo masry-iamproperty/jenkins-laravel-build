@@ -1,8 +1,4 @@
 pipeline {
-    environment {
-        WWWGROUP = 'root'
-        WWWUSER = 'root'
-    }
     agent {
         docker {
              image 'tmaier/docker-compose'
