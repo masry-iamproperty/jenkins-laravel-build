@@ -7,8 +7,8 @@ pipeline {
     stages {
         stage("Build"){
             steps {
-                sh 'docker -v'
-                sh 'docker-compose -v'
+                sh 'docker --version'
+                sh 'docker-compose --version'
             }
         }
     }
