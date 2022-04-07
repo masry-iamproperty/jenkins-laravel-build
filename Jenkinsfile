@@ -5,7 +5,7 @@ pipeline {
     }
     agent {
         docker {
-             image 'timoschwarzer/docker-with-compose'
+             image 'tmaier/docker-compose'
         }
     }
     stages {
