@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage("Starting containers"){
             steps {
-                sh 'docker-compose up'
+                sh 'docker -v'
+                sh 'docker-compose -v'
             }
         }
     }
