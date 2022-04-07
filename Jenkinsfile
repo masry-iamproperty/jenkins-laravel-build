@@ -4,8 +4,8 @@ pipeline {
         WWWUSER = 'docker'
     }
     agent {
-        docker {
-             image 'tmaier/docker-compose'
+        dockerfile {
+             dir '.docker'
         }
     }
     stages {
