@@ -1,24 +1,15 @@
 pipeline {
     agent {
-        dockerfile {
-             dir '.docker'
+        docker {
+             image 'timoschwarzer/docker-with-compose'
         }
     }
     stages {
         stage("Pre Build"){
             steps {
-                sh 'docker system prune -a --volumes -f'
+                sh 'docker -v'
+                sh 'docker-compose -v'
             }
-        }
-        stage("Build"){
-            steps{
-                sh 'docker-compose up'
-            }
-        }
-    }
-    post {
-        always {
-            sh 'docker-compose down --remove-orphans -f'
         }
     }
 }
