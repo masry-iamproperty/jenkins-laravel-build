@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        WWWGROUP = 'root'
+        WWWUSER = 'root'
+    }
     agent {
         docker {
              image 'timoschwarzer/docker-with-compose'
