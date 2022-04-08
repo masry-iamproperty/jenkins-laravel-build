@@ -7,15 +7,14 @@ pipeline {
         DB_DATABASE = ''
     }
     agent {
-        dockerfile {
-             dir '.docker'
-             args '--privileged --env DOCKER_TLS_CERTDIR=/certs -v jenkins-docker-certs:/certs/client -v /var/run/docker.sock:/var/run/sock'
+        docker {
+            image 'composer:latest'
         }
     }
     stages {
-        stage("Starting containers"){
+        stage("Build"){
             steps {
-                sh 'docker-compose up'
+                sh 'setup.sh'
             }
         }
     }
